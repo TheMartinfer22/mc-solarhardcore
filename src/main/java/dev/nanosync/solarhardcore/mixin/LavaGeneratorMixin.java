@@ -35,7 +35,7 @@ public abstract class LavaGeneratorMixin {
 
     @Inject(method = "randomTick", at = @At("HEAD"))
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random p_225542_4_, CallbackInfo ci) {
-        if (asBlock().is(Blocks.COBBLESTONE) && isTimeToSolarApocalypse(world)) {
+        if (asBlock().is(Blocks.COBBLESTONE) && isTimeToSolarApocalypse(world) && world.canSeeSky(pos)) {
             world.setBlock(pos, Blocks.LAVA.defaultBlockState(), 2);
         }
     }

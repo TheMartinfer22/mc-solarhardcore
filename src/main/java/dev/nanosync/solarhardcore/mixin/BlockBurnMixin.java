@@ -34,6 +34,10 @@ public abstract class BlockBurnMixin {
         if (isTimeToSolarApocalypse(world)) {
             Block block = state.getBlock();
 
+            if (block.is(Blocks.ICE) || block.is(Blocks.SNOW) || block.is(Blocks.SNOW_BLOCK)) {
+                world.removeBlock(pos, false);
+            }
+
             if (block.is(Blocks.TALL_GRASS) ||
                     block.is(Blocks.GRASS) ||
                     block instanceof FlowerBlock) {
