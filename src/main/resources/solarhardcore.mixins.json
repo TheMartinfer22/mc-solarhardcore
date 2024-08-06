@@ -9,6 +9,7 @@
     "CreeperExplosionMixin",
     "EntityBurnMixin",
     "FarmlandMixin",
+    "LavaGeneratorMixin",
     "LeavesMixin",
     "PlayerBurnMixin",
     "RainMixin",
