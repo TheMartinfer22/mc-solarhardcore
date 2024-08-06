@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.nanosync.solarhardcore.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "solarhardcore.refmap.json",
+  "mixins": [
+    "BlockBurnMixin",
+    "CreeperExplosionMixin",
+    "EntityBurnMixin",
+    "FarmlandMixin",
+    "LeavesMixin",
+    "PlayerBurnMixin",
+    "RainMixin",
+    "SpreadGrassMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
