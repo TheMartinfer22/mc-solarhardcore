@@ -18,7 +18,7 @@ public abstract class SpreadGrassMixin {
     private static void canBeGrass(BlockState state, IWorldReader worldReader, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         BlockPos blockPos = pos.above();
         World world = (World) worldReader;
-        if (world.isNight() || world.isRaining() || !world.canSeeSky(blockPos)) return;
+        if (world.isRaining() || !world.canSeeSky(blockPos)) return;
         if (isTimeToSolarApocalypse(world)) {
             cir.setReturnValue(false);
         }
