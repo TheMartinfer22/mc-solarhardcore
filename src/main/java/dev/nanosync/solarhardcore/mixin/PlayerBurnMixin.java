@@ -27,6 +27,9 @@ public abstract class PlayerBurnMixin extends LivingEntity {
     @Inject(method = "aiStep", at = @At("HEAD"))
     public void burnPlayerOnSe(CallbackInfo ci) {
         if (isTimeToSolarApocalypse(this.level) && isAlive() && !isOnFire() && !isCreative() && !this.level.isRaining() && !this.level.isNight() && !this.level.isClientSide() && this.level.canSeeSky(new BlockPos(this.position()))) {
+            if (((PlayerEntity) getEntity()).hasEffect(Effects.FIRE_RESISTANCE)) {
+                return;
+            }
             setSecondsOnFire(3);
             addEffect(new EffectInstance(Effects.WEAKNESS, 300));
         }
